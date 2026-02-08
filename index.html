@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La Liga Elite - Clasificación</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-mark">LL</span>
+        <div>
+          <h1>La Liga Elite</h1>
+          <p>Jornada 6 de 6 · Temporada 2026</p>
+        </div>
+      </div>
+      <nav class="tabs" aria-label="Secciones">
+        <button class="tab">Información general</button>
+        <button class="tab">Partidos</button>
+        <button class="tab active">Clasificación</button>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Clasificación</h2>
+            <p class="subtitle">Temporada 2026 · En directo</p>
+          </div>
+          <div class="season-select">
+            <span>Temporada</span>
+            <button type="button">2026</button>
+          </div>
+        </div>
+
+        <div class="table">
+          <div class="table-head">
+            <span>#</span>
+            <span>Club</span>
+            <span>PJ</span>
+            <span>V</span>
+            <span>E</span>
+            <span>D</span>
+            <span>GF</span>
+            <span>GC</span>
+            <span>DG</span>
+            <span>Pts</span>
+            <span>Últimos 5</span>
+          </div>
+          <div id="table-body" class="table-body" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="panel secondary">
+        <div class="panel-header">
+          <h2>Puntos por persona</h2>
+          <p class="subtitle">Configurables en <code>data/players.js</code></p>
+        </div>
+        <div id="players" class="players"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Datos editables en <code>data/teams.js</code> y <code>data/players.js</code>.</p>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

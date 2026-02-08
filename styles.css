@@ -1,0 +1,275 @@
+:root {
+  color-scheme: dark;
+  --bg: #0f1012;
+  --panel: #1b1c20;
+  --panel-light: #24262b;
+  --text: #f4f4f4;
+  --muted: #9aa0a6;
+  --accent: #f35b4f;
+  --green: #37b24d;
+  --yellow: #f6c453;
+  --red: #e03131;
+  --border: #2d2f36;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 6vw 1.5rem;
+  background: linear-gradient(135deg, #1a1b20 0%, #111216 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--accent);
+  font-weight: 700;
+  color: #0b0b0c;
+}
+
+.brand h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+}
+
+.brand p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.tab {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #2a2c33;
+  border-color: #3a3d46;
+}
+
+.container {
+  padding: 2rem 6vw 3rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.panel {
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 1.75rem;
+  border: 1px solid var(--border);
+}
+
+.panel.secondary {
+  background: var(--panel-light);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.panel-header h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.35rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.season-select {
+  background: #2c2e35;
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.season-select button {
+  background: transparent;
+  color: var(--text);
+  border: none;
+  font-weight: 600;
+}
+
+.table {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+.table-head,
+.table-row {
+  display: grid;
+  grid-template-columns: 40px 1.5fr repeat(7, 0.6fr) 1fr 1fr;
+  align-items: center;
+  padding: 0.8rem 1rem;
+}
+
+.table-head {
+  background: #202226;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table-row {
+  border-top: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.table-row:nth-child(odd) {
+  background: #1d1f24;
+}
+
+.club {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.club-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #2f3138;
+  font-weight: 700;
+}
+
+.points {
+  font-weight: 700;
+}
+
+.form {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.form span {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #0a0a0a;
+}
+
+.form .win {
+  background: var(--green);
+  color: #0a0a0a;
+}
+
+.form .draw {
+  background: var(--yellow);
+  color: #1a1a1a;
+}
+
+.form .loss {
+  background: var(--red);
+  color: #f9f9f9;
+}
+
+.players {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.player-card {
+  background: #1a1b20;
+  padding: 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+.player-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.player-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer {
+  padding: 2rem 6vw 3rem;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 960px) {
+  .table-head,
+  .table-row {
+    grid-template-columns: 32px 1.5fr repeat(5, 0.6fr) 0.8fr 1fr;
+    gap: 0.4rem;
+  }
+
+  .table-head span:nth-child(8),
+  .table-row span:nth-child(8),
+  .table-head span:nth-child(9),
+  .table-row span:nth-child(9) {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .table-head,
+  .table-row {
+    grid-template-columns: 28px 1.2fr repeat(3, 0.6fr) 1fr;
+  }
+
+  .table-head span:nth-child(n + 6),
+  .table-row span:nth-child(n + 6) {
+    display: none;
+  }
+}
